@@ -187,6 +187,7 @@ var eventsFunctionContext = {
   createObject: function(objectName) {
     var objectsList = eventsFunctionContext._objectsMap[objectName];
     if (objectsList) {
+<<<<<<< HEAD
       const object = parentEventsFunctionContext ?
         parentEventsFunctionContext.createObject(objectsList.firstKey()) :
         runtimeScene.createObject(objectsList.firstKey());
@@ -195,6 +196,12 @@ var eventsFunctionContext = {
         eventsFunctionContext._objectArraysMap[objectName].push(object);
       }
       return object;    }
+=======
+      return parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+    }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     return null;
   },
   getLayer: function(layerName) {
@@ -283,6 +290,7 @@ var eventsFunctionContext = {
   createObject: function(objectName) {
     var objectsList = eventsFunctionContext._objectsMap[objectName];
     if (objectsList) {
+<<<<<<< HEAD
       const object = parentEventsFunctionContext ?
         parentEventsFunctionContext.createObject(objectsList.firstKey()) :
         runtimeScene.createObject(objectsList.firstKey());
@@ -291,6 +299,12 @@ var eventsFunctionContext = {
         eventsFunctionContext._objectArraysMap[objectName].push(object);
       }
       return object;    }
+=======
+      return parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+    }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     return null;
   },
   getLayer: function(layerName) {
@@ -362,6 +376,7 @@ var eventsFunctionContext = {
   createObject: function(objectName) {
     var objectsList = eventsFunctionContext._objectsMap[objectName];
     if (objectsList) {
+<<<<<<< HEAD
       const object = parentEventsFunctionContext ?
         parentEventsFunctionContext.createObject(objectsList.firstKey()) :
         runtimeScene.createObject(objectsList.firstKey());
@@ -370,6 +385,12 @@ var eventsFunctionContext = {
         eventsFunctionContext._objectArraysMap[objectName].push(object);
       }
       return object;    }
+=======
+      return parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+    }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     return null;
   },
   getLayer: function(layerName) {
@@ -457,6 +478,7 @@ var eventsFunctionContext = {
   createObject: function(objectName) {
     var objectsList = eventsFunctionContext._objectsMap[objectName];
     if (objectsList) {
+<<<<<<< HEAD
       const object = parentEventsFunctionContext ?
         parentEventsFunctionContext.createObject(objectsList.firstKey()) :
         runtimeScene.createObject(objectsList.firstKey());
@@ -465,6 +487,12 @@ var eventsFunctionContext = {
         eventsFunctionContext._objectArraysMap[objectName].push(object);
       }
       return object;    }
+=======
+      return parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+    }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     return null;
   },
   getLayer: function(layerName) {
@@ -560,6 +588,7 @@ var eventsFunctionContext = {
   createObject: function(objectName) {
     var objectsList = eventsFunctionContext._objectsMap[objectName];
     if (objectsList) {
+<<<<<<< HEAD
       const object = parentEventsFunctionContext ?
         parentEventsFunctionContext.createObject(objectsList.firstKey()) :
         runtimeScene.createObject(objectsList.firstKey());
@@ -568,6 +597,12 @@ var eventsFunctionContext = {
         eventsFunctionContext._objectArraysMap[objectName].push(object);
       }
       return object;    }
+=======
+      return parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+    }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     return null;
   },
   getLayer: function(layerName) {
@@ -664,6 +699,7 @@ var eventsFunctionContext = {
   createObject: function(objectName) {
     var objectsList = eventsFunctionContext._objectsMap[objectName];
     if (objectsList) {
+<<<<<<< HEAD
       const object = parentEventsFunctionContext ?
         parentEventsFunctionContext.createObject(objectsList.firstKey()) :
         runtimeScene.createObject(objectsList.firstKey());
@@ -672,6 +708,12 @@ var eventsFunctionContext = {
         eventsFunctionContext._objectArraysMap[objectName].push(object);
       }
       return object;    }
+=======
+      return parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+    }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     return null;
   },
   getLayer: function(layerName) {
@@ -741,6 +783,7 @@ var eventsFunctionContext = {
   createObject: function(objectName) {
     var objectsList = eventsFunctionContext._objectsMap[objectName];
     if (objectsList) {
+<<<<<<< HEAD
       const object = parentEventsFunctionContext ?
         parentEventsFunctionContext.createObject(objectsList.firstKey()) :
         runtimeScene.createObject(objectsList.firstKey());
@@ -749,6 +792,12 @@ var eventsFunctionContext = {
         eventsFunctionContext._objectArraysMap[objectName].push(object);
       }
       return object;    }
+=======
+      return parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+    }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     return null;
   },
   getLayer: function(layerName) {

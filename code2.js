@@ -1,6 +1,7 @@
 gdjs.OptionsCode = {};
 gdjs.OptionsCode.GDSurvivedObjects1= [];
 gdjs.OptionsCode.GDSurvivedObjects2= [];
+<<<<<<< HEAD
 gdjs.OptionsCode.GDPlayerObjects1= [];
 gdjs.OptionsCode.GDPlayerObjects2= [];
 gdjs.OptionsCode.GDZombieObjects1= [];
@@ -41,6 +42,8 @@ gdjs.OptionsCode.GDLifeLostObjects1= [];
 gdjs.OptionsCode.GDLifeLostObjects2= [];
 gdjs.OptionsCode.GDStatsTVObjects1= [];
 gdjs.OptionsCode.GDStatsTVObjects2= [];
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
 gdjs.OptionsCode.GDOptionsObjects1= [];
 gdjs.OptionsCode.GDOptionsObjects2= [];
 gdjs.OptionsCode.GDNewObjectObjects1= [];
@@ -91,6 +94,7 @@ runtimeScene.getOnceTriggers().startNewFrame();
 
 gdjs.OptionsCode.GDSurvivedObjects1.length = 0;
 gdjs.OptionsCode.GDSurvivedObjects2.length = 0;
+<<<<<<< HEAD
 gdjs.OptionsCode.GDPlayerObjects1.length = 0;
 gdjs.OptionsCode.GDPlayerObjects2.length = 0;
 gdjs.OptionsCode.GDZombieObjects1.length = 0;
@@ -131,6 +135,8 @@ gdjs.OptionsCode.GDLifeLostObjects1.length = 0;
 gdjs.OptionsCode.GDLifeLostObjects2.length = 0;
 gdjs.OptionsCode.GDStatsTVObjects1.length = 0;
 gdjs.OptionsCode.GDStatsTVObjects2.length = 0;
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
 gdjs.OptionsCode.GDOptionsObjects1.length = 0;
 gdjs.OptionsCode.GDOptionsObjects2.length = 0;
 gdjs.OptionsCode.GDNewObjectObjects1.length = 0;

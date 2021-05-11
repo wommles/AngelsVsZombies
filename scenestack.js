@@ -21,6 +21,7 @@ var gdjs;
       const currentScene = this._stack[this._stack.length - 1];
       if (currentScene.renderAndStep(elapsedTime)) {
         const request = currentScene.getRequestedChange();
+<<<<<<< HEAD
         if (request === gdjs2.SceneChangeRequest.STOP_GAME) {
           this._runtimeGame.getRenderer().stopGame();
           return true;
@@ -31,6 +32,18 @@ var gdjs;
         } else if (request === gdjs2.SceneChangeRequest.REPLACE_SCENE) {
           this.replace(currentScene.getRequestedScene());
         } else if (request === gdjs2.SceneChangeRequest.CLEAR_SCENES) {
+=======
+        if (request === gdjs2.RuntimeScene.STOP_GAME) {
+          this._runtimeGame.getRenderer().stopGame();
+          return true;
+        } else if (request === gdjs2.RuntimeScene.POP_SCENE) {
+          this.pop();
+        } else if (request === gdjs2.RuntimeScene.PUSH_SCENE) {
+          this.push(currentScene.getRequestedScene());
+        } else if (request === gdjs2.RuntimeScene.REPLACE_SCENE) {
+          this.replace(currentScene.getRequestedScene());
+        } else if (request === gdjs2.RuntimeScene.CLEAR_SCENES) {
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
           this.replace(currentScene.getRequestedScene(), true);
         } else {
           console.error("Unrecognized change in scene stack.");

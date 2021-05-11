@@ -63,6 +63,7 @@ var gdjs;
         runtimeScene.getGame().enableMetrics(enable);
       };
       network2.variableStructureToJSON = function(variable) {
+<<<<<<< HEAD
         if (variable.isPrimitive()) {
           return JSON.stringify(variable.getValue());
         } else if (variable.getType() === "array") {
@@ -98,6 +99,29 @@ var gdjs;
         }
         console.error("JSON conversion error: Variable type not recognized");
         return "";
+=======
+        if (!variable.isStructure()) {
+          if (variable.isNumber()) {
+            return JSON.stringify(variable.getAsNumber());
+          } else {
+            return JSON.stringify(variable.getAsString());
+          }
+        }
+        let str = "{";
+        let firstChild = true;
+        const children = variable.getAllChildren();
+        for (const p in children) {
+          if (children.hasOwnProperty(p)) {
+            if (!firstChild) {
+              str += ",";
+            }
+            str += JSON.stringify(p) + ": " + gdjs2.evtTools.network.variableStructureToJSON(children[p]);
+            firstChild = false;
+          }
+        }
+        str += "}";
+        return str;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       };
       network2.objectVariableStructureToJSON = function(object, variable) {
         return gdjs2.evtTools.network.variableStructureToJSON(variable);
@@ -105,6 +129,7 @@ var gdjs;
       network2._objectToVariable = function(obj, variable) {
         if (obj === null) {
           variable.setString("null");
+<<<<<<< HEAD
         } else if (typeof obj === "number") {
           if (Number.isNaN(obj)) {
             console.warn("Variables cannot be set to NaN, setting it to 0.");
@@ -129,10 +154,33 @@ var gdjs;
           for (var p in obj) {
             if (obj.hasOwnProperty(p)) {
               network2._objectToVariable(obj[p], variable.getChild(p));
+=======
+        } else if ((typeof obj === "number" || typeof obj === "string") && !isNaN(obj)) {
+          variable.setNumber(obj);
+        } else if (typeof obj === "string" || obj instanceof String) {
+          variable.setString(obj);
+        } else if (typeof obj === "undefined") {
+        } else if (typeof obj === "boolean") {
+          variable.setString("" + obj);
+        } else if (Array.isArray(obj)) {
+          for (var i = 0; i < obj.length; ++i) {
+            gdjs2.evtTools.network._objectToVariable(obj[i], variable.getChild(i.toString()));
+          }
+        } else if (typeof obj === "object") {
+          for (var p in obj) {
+            if (obj.hasOwnProperty(p)) {
+              gdjs2.evtTools.network._objectToVariable(obj[p], variable.getChild(p));
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
             }
           }
         } else if (typeof obj === "symbol") {
           variable.setString(obj.toString());
+<<<<<<< HEAD
+=======
+        } else if (typeof obj === "number" && isNaN(obj)) {
+          console.warn("Variables cannot be set to NaN, setting it to 0.");
+          variable.setNumber(0);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
         } else if (typeof obj === "bigint") {
           if (obj > Number.MAX_SAFE_INTEGER)
             console.warn("Integers bigger than " + Number.MAX_SAFE_INTEGER + " aren't supported by variables, it will be reduced to that size.");

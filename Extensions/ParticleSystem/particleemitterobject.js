@@ -516,9 +516,12 @@ var gdjs;
         this._flowDirty = true;
       }
     }
+<<<<<<< HEAD
     getParticleCount() {
       return this._renderer.getParticleCount();
     }
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     getTank() {
       return this.tank;
     }

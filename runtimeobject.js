@@ -1,10 +1,13 @@
 var gdjs;
 (function(gdjs2) {
+<<<<<<< HEAD
   const computeSqBoundingRadius = (width, height, centerX, centerY) => {
     const radiusX = Math.max(centerX, width - centerX);
     const radiusY = Math.max(centerY, height - centerY);
     return Math.pow(radiusX, 2) + Math.pow(radiusY, 2);
   };
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
   const RuntimeObject2 = class {
     constructor(runtimeScene, objectData) {
       this.x = 0;
@@ -26,6 +29,7 @@ var gdjs;
       this.getVariableString = RuntimeObject2.getVariableString;
       this.setVariableNumber = RuntimeObject2.setVariableNumber;
       this.setVariableString = RuntimeObject2.setVariableString;
+<<<<<<< HEAD
       this.getVariableBoolean = RuntimeObject2.getVariableBoolean;
       this.setVariableBoolean = RuntimeObject2.setVariableBoolean;
       this.toggleVariableBoolean = RuntimeObject2.toggleVariableBoolean;
@@ -35,6 +39,11 @@ var gdjs;
       this.variablePushCopy = RuntimeObject2.variablePushCopy;
       this.valuePush = RuntimeObject2.valuePush;
       this.variableRemoveAt = RuntimeObject2.variableRemoveAt;
+=======
+      this.variableChildExists = RuntimeObject2.variableChildExists;
+      this.variableRemoveChild = RuntimeObject2.variableRemoveChild;
+      this.variableClearChildren = RuntimeObject2.variableClearChildren;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       this.getSqDistanceTo = RuntimeObject2.prototype.getSqDistanceToPosition;
       this.name = objectData.name || "";
       this.type = objectData.type || "";
@@ -99,8 +108,11 @@ var gdjs;
     }
     update(runtimeScene) {
     }
+<<<<<<< HEAD
     updatePreRender(runtimeScene) {
     }
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     extraInitializationFromInitialInstance(initialInstanceData) {
     }
     updateFromObjectData(oldObjectData, newObjectData) {
@@ -256,7 +268,11 @@ var gdjs;
       return variable.hasChild(childName);
     }
     static variableRemoveChild(variable, childName) {
+<<<<<<< HEAD
       variable.removeChild(childName);
+=======
+      return variable.removeChild(childName);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     }
     static variableClearChildren(variable) {
       variable.clearChildren();
@@ -690,6 +706,7 @@ var gdjs;
       }
     }
     static collisionTest(obj1, obj2, ignoreTouchingEdges) {
+<<<<<<< HEAD
       const o1centerX = obj1.getCenterX();
       const o1centerY = obj1.getCenterY();
       const obj1BoundingRadius = Math.sqrt(computeSqBoundingRadius(obj1.getWidth(), obj1.getHeight(), o1centerX, o1centerY));
@@ -699,6 +716,17 @@ var gdjs;
       const diffX = obj1.getDrawableX() + o1centerX - (obj2.getDrawableX() + o2centerX);
       const diffY = obj1.getDrawableY() + o1centerY - (obj2.getDrawableY() + o2centerY);
       if (Math.sqrt(diffX * diffX + diffY * diffY) > obj1BoundingRadius + obj2BoundingRadius) {
+=======
+      const o1w = obj1.getWidth();
+      const o1h = obj1.getHeight();
+      const o2w = obj2.getWidth();
+      const o2h = obj2.getHeight();
+      const x = obj1.getDrawableX() + obj1.getCenterX() - (obj2.getDrawableX() + obj2.getCenterX());
+      const y = obj1.getDrawableY() + obj1.getCenterY() - (obj2.getDrawableY() + obj2.getCenterY());
+      const obj1BoundingRadius = Math.sqrt(o1w * o1w + o1h * o1h) / 2;
+      const obj2BoundingRadius = Math.sqrt(o2w * o2w + o2h * o2h) / 2;
+      if (Math.sqrt(x * x + y * y) > obj1BoundingRadius + obj2BoundingRadius) {
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
         return false;
       }
       const hitBoxes1 = obj1.getHitBoxes();
@@ -713,6 +741,7 @@ var gdjs;
       return false;
     }
     raycastTest(x, y, endX, endY, closest) {
+<<<<<<< HEAD
       const objCenterX = this.getCenterX();
       const objCenterY = this.getCenterY();
       const objSqBoundingRadius = computeSqBoundingRadius(this.getWidth(), this.getHeight(), objCenterX, objCenterY);
@@ -727,6 +756,20 @@ var gdjs;
         return result;
       }
       let testSqDist = closest ? raySqBoundingRadius : 0;
+=======
+      const objW = this.getWidth();
+      const objH = this.getHeight();
+      const diffX = this.getDrawableX() + this.getCenterX() - x;
+      const diffY = this.getDrawableY() + this.getCenterY() - y;
+      const sqBoundingR = (objW * objW + objH * objH) / 4;
+      const sqDist = (endX - x) * (endX - x) + (endY - y) * (endY - y);
+      let result = gdjs2.Polygon.raycastTestStatics.result;
+      result.collision = false;
+      if (diffX * diffX + diffY * diffY > sqBoundingR + sqDist + 2 * Math.sqrt(sqDist * sqBoundingR)) {
+        return result;
+      }
+      let testSqDist = closest ? sqDist : 0;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       const hitBoxes = this.getHitBoxes();
       for (let i = 0; i < hitBoxes.length; i++) {
         const res = gdjs2.Polygon.raycastTest(hitBoxes[i], x, y, endX, endY);
@@ -735,7 +778,11 @@ var gdjs;
             testSqDist = res.closeSqDist;
             result = res;
           } else {
+<<<<<<< HEAD
             if (!closest && res.farSqDist > testSqDist && res.farSqDist <= raySqBoundingRadius) {
+=======
+            if (!closest && res.farSqDist > testSqDist && res.farSqDist <= sqDist) {
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
               testSqDist = res.farSqDist;
               result = res;
             }
@@ -792,6 +839,7 @@ var gdjs;
   };
   let RuntimeObject = RuntimeObject2;
   RuntimeObject.supportsReinitialization = false;
+<<<<<<< HEAD
   RuntimeObject.setVariableBoolean = function(variable, newValue) {
     variable.setBoolean(newValue);
   };
@@ -810,6 +858,8 @@ var gdjs;
   RuntimeObject.variableRemoveAt = function(array, index) {
     array.removeAtIndex(index);
   };
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
   RuntimeObject._identifiers = new Hashtable();
   RuntimeObject._newId = 0;
   RuntimeObject.forcesGarbage = [];

@@ -1,6 +1,10 @@
 var gdjs;
 (function(gdjs2) {
+<<<<<<< HEAD
   class RuntimeScene {
+=======
+  const RuntimeScene2 = class {
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     constructor(runtimeGame) {
       this._eventsFunction = null;
       this._lastId = 0;
@@ -25,7 +29,11 @@ var gdjs;
       this._variables = new gdjs2.VariablesContainer();
       this._runtimeGame = runtimeGame;
       this._timeManager = new gdjs2.TimeManager();
+<<<<<<< HEAD
       this._requestedChange = SceneChangeRequest.CONTINUE;
+=======
+      this._requestedChange = RuntimeScene2.CONTINUE;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       this._onceTriggers = new gdjs2.OnceTriggers();
       this.onGameResolutionResized();
     }
@@ -216,7 +224,11 @@ var gdjs;
       if (this._profiler) {
         this._profiler.beginFrame();
       }
+<<<<<<< HEAD
       this._requestedChange = SceneChangeRequest.CONTINUE;
+=======
+      this._requestedChange = RuntimeScene2.CONTINUE;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       this._timeManager.update(elapsedTime, this._runtimeGame.getMinimalFramerate());
       if (this._profiler) {
         this._profiler.begin("objects (pre-events)");
@@ -237,8 +249,12 @@ var gdjs;
       if (this._profiler) {
         this._profiler.begin("events");
       }
+<<<<<<< HEAD
       if (this._eventsFunction !== null)
         this._eventsFunction(this);
+=======
+      this._eventsFunction(this);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       if (this._profiler) {
         this._profiler.end("events");
       }
@@ -259,11 +275,19 @@ var gdjs;
         this._profiler.end("callbacks and extensions (post-events)");
       }
       if (this._profiler) {
+<<<<<<< HEAD
         this._profiler.begin("objects (pre-render)");
       }
       this._updateObjectsPreRender();
       if (this._profiler) {
         this._profiler.end("objects (pre-render)");
+=======
+        this._profiler.begin("objects (visibility)");
+      }
+      this._updateObjectsVisibility();
+      if (this._profiler) {
+        this._profiler.end("objects (visibility)");
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       }
       if (this._profiler) {
         this._profiler.begin("layers (effects update)");
@@ -275,10 +299,13 @@ var gdjs;
       if (this._profiler) {
         this._profiler.begin("render");
       }
+<<<<<<< HEAD
       const renderDebugDraw = false;
       if (renderDebugDraw && this._layersCameraCoordinates) {
         this.getRenderer().renderDebugDraw(this._allInstancesList, this._layersCameraCoordinates);
       }
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       this._isJustResumed = false;
       this.render();
       if (this._profiler) {
@@ -313,6 +340,7 @@ var gdjs;
         }
       }
     }
+<<<<<<< HEAD
     _updateObjectsPreRender() {
       if (this._timeManager.isFirstFrame()) {
         this._constructListOfAllInstances();
@@ -323,15 +351,32 @@ var gdjs;
             object.getRendererObject().visible = !object.isHidden();
           }
           object.updatePreRender(this);
+=======
+    _updateObjectsVisibility() {
+      if (this._timeManager.isFirstFrame()) {
+        this._constructListOfAllInstances();
+        for (let i = 0, len = this._allInstancesList.length; i < len; ++i) {
+          let object = this._allInstancesList[i];
+          let rendererObject = object.getRendererObject();
+          if (rendererObject) {
+            object.getRendererObject().visible = !object.isHidden();
+          }
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
         }
         return;
       } else {
         this._updateLayersCameraCoordinates();
         this._constructListOfAllInstances();
         for (let i = 0, len = this._allInstancesList.length; i < len; ++i) {
+<<<<<<< HEAD
           const object = this._allInstancesList[i];
           const cameraCoords = this._layersCameraCoordinates[object.getLayer()];
           const rendererObject = object.getRendererObject();
+=======
+          let object = this._allInstancesList[i];
+          const cameraCoords = this._layersCameraCoordinates[object.getLayer()];
+          let rendererObject = object.getRendererObject();
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
           if (!cameraCoords || !rendererObject) {
             continue;
           }
@@ -345,7 +390,10 @@ var gdjs;
               rendererObject.visible = true;
             }
           }
+<<<<<<< HEAD
           object.updatePreRender(this);
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
         }
       }
     }
@@ -434,6 +482,10 @@ var gdjs;
     }
     addObject(obj) {
       if (!this._instances.containsKey(obj.name)) {
+<<<<<<< HEAD
+=======
+        console.log('RuntimeScene.addObject: No objects called "' + obj.name + '"! Adding it.');
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
         this._instances.put(obj.name, []);
       }
       this._instances.get(obj.name).push(obj);
@@ -451,7 +503,11 @@ var gdjs;
       }
       const cache = this._instancesCache.get(objectName);
       const ctor = this._objectsCtor.get(objectName);
+<<<<<<< HEAD
       let obj;
+=======
+      let obj = null;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       if (!cache || cache.length === 0) {
         obj = new ctor(this, this._objects.get(objectName));
       } else {
@@ -551,8 +607,12 @@ var gdjs;
     }
     requestChange(change, sceneName) {
       this._requestedChange = change;
+<<<<<<< HEAD
       if (sceneName)
         this._requestedScene = sceneName;
+=======
+      this._requestedScene = sceneName;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     }
     getProfiler() {
       return this._profiler;
@@ -586,6 +646,7 @@ var gdjs;
     sceneJustResumed() {
       return this._isJustResumed;
     }
+<<<<<<< HEAD
   }
   gdjs2.RuntimeScene = RuntimeScene;
   let SceneChangeRequest;
@@ -597,5 +658,16 @@ var gdjs;
     SceneChangeRequest2[SceneChangeRequest2["CLEAR_SCENES"] = 4] = "CLEAR_SCENES";
     SceneChangeRequest2[SceneChangeRequest2["STOP_GAME"] = 5] = "STOP_GAME";
   })(SceneChangeRequest = gdjs2.SceneChangeRequest || (gdjs2.SceneChangeRequest = {}));
+=======
+  };
+  let RuntimeScene = RuntimeScene2;
+  RuntimeScene.CONTINUE = 0;
+  RuntimeScene.PUSH_SCENE = 1;
+  RuntimeScene.POP_SCENE = 2;
+  RuntimeScene.REPLACE_SCENE = 3;
+  RuntimeScene.CLEAR_SCENES = 4;
+  RuntimeScene.STOP_GAME = 5;
+  gdjs2.RuntimeScene = RuntimeScene;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
 })(gdjs || (gdjs = {}));
 //# sourceMappingURL=runtimescene.js.map

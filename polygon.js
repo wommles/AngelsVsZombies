@@ -120,10 +120,14 @@ var gdjs;
       result.collision = true;
       const p1Center = p1.computeCenter();
       const p2Center = p2.computeCenter();
+<<<<<<< HEAD
       const d = [
         p1Center[0] - p2Center[0],
         p1Center[1] - p2Center[1]
       ];
+=======
+      const d = [p1Center[0] - p2Center[0], p1Center[1] - p2Center[1]];
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       if (Polygon2.dotProduct(d, move_axis) < 0) {
         move_axis[0] = -move_axis[0];
         move_axis[1] = -move_axis[1];

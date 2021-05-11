@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 gdjs.Boss_32fightCode = {};
 gdjs.Boss_32fightCode.GDBowlingBall1Objects1_1final = [];
 
@@ -2168,8 +2169,29 @@ gdjs.Boss_32fightCode.GDBowlingBall1Objects2.length = 0;
 gdjs.Boss_32fightCode.GDBowlingBall1Objects3.length = 0;
 
 gdjs.Boss_32fightCode.eventsList12(runtimeScene);
+=======
+gdjs.New_32sceneCode = {};
+
+gdjs.New_32sceneCode.conditionTrue_0 = {val:false};
+gdjs.New_32sceneCode.condition0IsTrue_0 = {val:false};
+
+
+gdjs.New_32sceneCode.eventsList0 = function(runtimeScene) {
+
+};
+
+gdjs.New_32sceneCode.func = function(runtimeScene) {
+runtimeScene.getOnceTriggers().startNewFrame();
+
+
+gdjs.New_32sceneCode.eventsList0(runtimeScene);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
 return;
 
 }
 
+<<<<<<< HEAD
 gdjs['Boss_32fightCode'] = gdjs.Boss_32fightCode;
+=======
+gdjs['New_32sceneCode'] = gdjs.New_32sceneCode;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5

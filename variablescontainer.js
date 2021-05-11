@@ -20,8 +20,11 @@ var gdjs;
       let i = 0;
       for (let j = 0; j < data.length; ++j) {
         const varData = data[j];
+<<<<<<< HEAD
         if (!varData.name)
           continue;
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
         const variable = that.get(varData.name);
         variable.reinitialize(varData);
         if (!keepOldVariables) {
@@ -96,8 +99,11 @@ var gdjs;
   let VariablesContainer = VariablesContainer2;
   VariablesContainer._deletedVars = [];
   VariablesContainer.badVariablesContainer = {
+<<<<<<< HEAD
     _variables: new Hashtable(),
     _variablesArray: [],
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     has: function() {
       return false;
     },
@@ -118,6 +124,7 @@ var gdjs;
     }
   };
   VariablesContainer.badVariable = {
+<<<<<<< HEAD
     _type: "number",
     _bool: false,
     _children: {},
@@ -149,6 +156,11 @@ var gdjs;
     getValue: () => 0,
     getChild: () => gdjs2.VariablesContainer.badVariable,
     getChildAt: () => gdjs2.VariablesContainer.badVariable,
+=======
+    getChild: function() {
+      return VariablesContainer2.badVariable;
+    },
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     hasChild: function() {
       return false;
     },
@@ -167,15 +179,21 @@ var gdjs;
     setString: function() {
       return;
     },
+<<<<<<< HEAD
     setBoolean: function() {
       return;
     },
     getAsString: function() {
       return "0";
+=======
+    getAsString: function() {
+      return "";
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     },
     getAsNumber: function() {
       return 0;
     },
+<<<<<<< HEAD
     getAsBoolean: function() {
       return false;
     },
@@ -192,6 +210,11 @@ var gdjs;
     removeAtIndex: function() {
       return;
     },
+=======
+    getAllChildren: function() {
+      return {};
+    },
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     add: function() {
       return;
     },
@@ -207,14 +230,21 @@ var gdjs;
     concatenate: function() {
       return;
     },
+<<<<<<< HEAD
     concatenateString: function() {
       return;
     },
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     setUndefinedInContainer: function() {
       return;
     },
     isUndefinedInContainer: function() {
+<<<<<<< HEAD
       return true;
+=======
+      return;
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     }
   };
   gdjs2.VariablesContainer = VariablesContainer;

@@ -1,6 +1,7 @@
 gdjs.Game_32OverCode = {};
 gdjs.Game_32OverCode.GDSurvivedObjects1= [];
 gdjs.Game_32OverCode.GDSurvivedObjects2= [];
+<<<<<<< HEAD
 gdjs.Game_32OverCode.GDPlayerObjects1= [];
 gdjs.Game_32OverCode.GDPlayerObjects2= [];
 gdjs.Game_32OverCode.GDZombieObjects1= [];
@@ -41,6 +42,8 @@ gdjs.Game_32OverCode.GDLifeLostObjects1= [];
 gdjs.Game_32OverCode.GDLifeLostObjects2= [];
 gdjs.Game_32OverCode.GDStatsTVObjects1= [];
 gdjs.Game_32OverCode.GDStatsTVObjects2= [];
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
 gdjs.Game_32OverCode.GDGameOverObjects1= [];
 gdjs.Game_32OverCode.GDGameOverObjects2= [];
 gdjs.Game_32OverCode.GDTextObjects1= [];
@@ -71,7 +74,11 @@ gdjs.Game_32OverCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJu
 }if (gdjs.Game_32OverCode.condition0IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("Survived"), gdjs.Game_32OverCode.GDSurvivedObjects1);
 {for(var i = 0, len = gdjs.Game_32OverCode.GDSurvivedObjects1.length ;i < len;++i) {
+<<<<<<< HEAD
     gdjs.Game_32OverCode.GDSurvivedObjects1[i].setString(gdjs.evtTools.common.toString(gdjs.evtTools.common.trunc(gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().get("Survived")) * 10) / 10));
+=======
+    gdjs.Game_32OverCode.GDSurvivedObjects1[i].setString(gdjs.evtTools.common.toString(gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().get("Survived"))));
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
 }
 }}
 
@@ -109,6 +116,7 @@ runtimeScene.getOnceTriggers().startNewFrame();
 
 gdjs.Game_32OverCode.GDSurvivedObjects1.length = 0;
 gdjs.Game_32OverCode.GDSurvivedObjects2.length = 0;
+<<<<<<< HEAD
 gdjs.Game_32OverCode.GDPlayerObjects1.length = 0;
 gdjs.Game_32OverCode.GDPlayerObjects2.length = 0;
 gdjs.Game_32OverCode.GDZombieObjects1.length = 0;
@@ -149,6 +157,8 @@ gdjs.Game_32OverCode.GDLifeLostObjects1.length = 0;
 gdjs.Game_32OverCode.GDLifeLostObjects2.length = 0;
 gdjs.Game_32OverCode.GDStatsTVObjects1.length = 0;
 gdjs.Game_32OverCode.GDStatsTVObjects2.length = 0;
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
 gdjs.Game_32OverCode.GDGameOverObjects1.length = 0;
 gdjs.Game_32OverCode.GDGameOverObjects2.length = 0;
 gdjs.Game_32OverCode.GDTextObjects1.length = 0;

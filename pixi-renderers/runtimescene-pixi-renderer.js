@@ -49,6 +49,7 @@ var gdjs;
         this._debugDraw = new PIXI.Graphics();
         this._pixiContainer.addChild(this._debugDraw);
       }
+<<<<<<< HEAD
       const displayAABB = true;
       const displayHitboxesAndSomePoints = true;
       const debugDraw = this._debugDraw;
@@ -99,6 +100,23 @@ var gdjs;
           debugDraw.fill.color = 15263848;
           debugDraw.drawCircle(object.getDrawableX() + object.getCenterX(), object.getDrawableY() + object.getCenterY(), 3);
         }
+=======
+      const debugDraw = this._debugDraw;
+      debugDraw.clear();
+      debugDraw.beginFill(6842600);
+      debugDraw.lineStyle(1, 6842600, 1);
+      debugDraw.fill.alpha = 0.1;
+      debugDraw.alpha = 0.8;
+      for (let i = 0; i < instances.length; i++) {
+        const object = instances[i];
+        const cameraCoords = layersCameraCoordinates[object.getLayer()];
+        const rendererObject = object.getRendererObject();
+        if (!cameraCoords || !rendererObject) {
+          continue;
+        }
+        const aabb = object.getAABB();
+        debugDraw.drawRect(aabb.min[0], aabb.min[1], aabb.max[0] - aabb.min[0], aabb.max[1] - aabb.min[1]);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       }
       debugDraw.endFill();
     }

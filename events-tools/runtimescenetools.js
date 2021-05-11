@@ -111,12 +111,17 @@ var gdjs;
         if (!runtimeScene3.getGame().getSceneData(newSceneName)) {
           return;
         }
+<<<<<<< HEAD
         runtimeScene3.requestChange(clearOthers ? gdjs2.SceneChangeRequest.CLEAR_SCENES : gdjs2.SceneChangeRequest.REPLACE_SCENE, newSceneName);
+=======
+        runtimeScene3.requestChange(clearOthers ? gdjs2.RuntimeScene.CLEAR_SCENES : gdjs2.RuntimeScene.REPLACE_SCENE, newSceneName);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       };
       runtimeScene2.pushScene = function(runtimeScene3, newSceneName) {
         if (!runtimeScene3.getGame().getSceneData(newSceneName)) {
           return;
         }
+<<<<<<< HEAD
         runtimeScene3.requestChange(gdjs2.SceneChangeRequest.PUSH_SCENE, newSceneName);
       };
       runtimeScene2.popScene = function(runtimeScene3) {
@@ -124,6 +129,15 @@ var gdjs;
       };
       runtimeScene2.stopGame = function(runtimeScene3) {
         runtimeScene3.requestChange(gdjs2.SceneChangeRequest.STOP_GAME);
+=======
+        runtimeScene3.requestChange(gdjs2.RuntimeScene.PUSH_SCENE, newSceneName);
+      };
+      runtimeScene2.popScene = function(runtimeScene3) {
+        runtimeScene3.requestChange(gdjs2.RuntimeScene.POP_SCENE);
+      };
+      runtimeScene2.stopGame = function(runtimeScene3) {
+        runtimeScene3.requestChange(gdjs2.RuntimeScene.STOP_GAME);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       };
       runtimeScene2.createObjectsFromExternalLayout = function(scene, externalLayout, xPos, yPos) {
         const externalLayoutData = scene.getGame().getExternalLayoutData(externalLayout);

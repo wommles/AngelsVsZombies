@@ -150,6 +150,7 @@ var gdjs;
       return (Math.abs(this._scaleX) + Math.abs(this._scaleY)) / 2;
     }
     getScaleX() {
+<<<<<<< HEAD
       return this._scaleX;
     }
     getScaleY() {
@@ -176,6 +177,25 @@ var gdjs;
       this._scaleY = newScale;
       this._renderer.setScaleY(newScale);
       this.hitBoxesDirty = true;
+=======
+      return this._renderer.getScaleX();
+    }
+    getScaleY() {
+      return this._renderer.getScaleY();
+    }
+    setScale(newScale) {
+      this._scaleX = newScale;
+      this._scaleY = newScale;
+      this._renderer.setScale(newScale);
+    }
+    setScaleX(newScale) {
+      this._scaleX = newScale;
+      this._renderer.setScaleX(newScale);
+    }
+    setScaleY(newScale) {
+      this._scaleY = newScale;
+      this._renderer.setScaleY(newScale);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     }
     setColor(str) {
       const color = str.split(";");
@@ -188,7 +208,11 @@ var gdjs;
       this._useGradient = false;
       this._renderer.updateStyle();
     }
+<<<<<<< HEAD
     getColor() {
+=======
+    getColor(str) {
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       return this._color[0] + ";" + this._color[1] + ";" + this._color[2];
     }
     setTextAlignment(alignment) {
@@ -202,11 +226,16 @@ var gdjs;
       return this._wrapping;
     }
     setWrapping(enable) {
+<<<<<<< HEAD
       if (this._wrapping === enable)
         return;
       this._wrapping = enable;
       this._renderer.updateStyle();
       this.hitBoxesDirty = true;
+=======
+      this._wrapping = enable;
+      this._renderer.updateStyle();
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     }
     getWrappingWidth() {
       return this._wrappingWidth;
@@ -215,11 +244,16 @@ var gdjs;
       if (width <= 1) {
         width = 1;
       }
+<<<<<<< HEAD
       if (this._wrappingWidth === width)
         return;
       this._wrappingWidth = width;
       this._renderer.updateStyle();
       this.hitBoxesDirty = true;
+=======
+      this._wrappingWidth = width;
+      this._renderer.updateStyle();
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     }
     setOutline(str, thickness) {
       const color = str.split(";");

@@ -62,12 +62,15 @@ var gdjs;
       const rgb = PIXI.utils.hex2rgb(this._tiledSprite.tint);
       return Math.floor(rgb[0] * 255) + ";" + Math.floor(rgb[1] * 255) + ";" + Math.floor(rgb[2] * 255);
     }
+<<<<<<< HEAD
     getTextureWidth() {
       return this._tiledSprite.texture.width;
     }
     getTextureHeight() {
       return this._tiledSprite.texture.height;
     }
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
   }
   gdjs2.TiledSpriteRuntimeObjectRenderer = TiledSpriteRuntimeObjectPixiRenderer;
 })(gdjs || (gdjs = {}));

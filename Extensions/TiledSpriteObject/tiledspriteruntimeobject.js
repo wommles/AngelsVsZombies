@@ -7,8 +7,11 @@ var gdjs;
       this._yOffset = 0;
       this.opacity = 255;
       this._renderer = new gdjs2.TiledSpriteRuntimeObjectRenderer(this, runtimeScene, tiledSpriteObjectData.texture);
+<<<<<<< HEAD
       this._width = 0;
       this._height = 0;
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       this.setWidth(tiledSpriteObjectData.width);
       this.setHeight(tiledSpriteObjectData.height);
       this.onCreated();
@@ -56,6 +59,7 @@ var gdjs;
       this._renderer.updateAngle();
     }
     getWidth() {
+<<<<<<< HEAD
       return this._width;
     }
     getHeight() {
@@ -74,6 +78,18 @@ var gdjs;
       this._height = height;
       this._renderer.setHeight(height);
       this.hitBoxesDirty = true;
+=======
+      return this._renderer.getWidth();
+    }
+    getHeight() {
+      return this._renderer.getHeight();
+    }
+    setWidth(width) {
+      this._renderer.setWidth(width);
+    }
+    setHeight(height) {
+      this._renderer.setHeight(height);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
     }
     setXOffset(xOffset) {
       this._xOffset = xOffset;
@@ -108,6 +124,7 @@ var gdjs;
     getColor() {
       return this._renderer.getColor();
     }
+<<<<<<< HEAD
     getScale() {
       return (this.getScaleX() + this.getScaleY()) / 2;
     }
@@ -127,6 +144,8 @@ var gdjs;
     setScaleY(newScale) {
       this.setHeight(this._renderer.getTextureHeight() * newScale);
     }
+=======
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
   }
   gdjs2.TiledSpriteRuntimeObject = TiledSpriteRuntimeObject;
   gdjs2.registerObject("TiledSpriteObject::TiledSprite", gdjs2.TiledSpriteRuntimeObject);

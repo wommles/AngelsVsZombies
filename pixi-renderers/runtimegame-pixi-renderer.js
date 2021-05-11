@@ -267,8 +267,13 @@ var gdjs;
         event.stopPropagation();
         return false;
       };
+<<<<<<< HEAD
       renderer.view.onwheel = function(event) {
         manager.onMouseWheel(-event.deltaY);
+=======
+      renderer.view.onmousewheel = function(event) {
+        manager.onMouseWheel(event.wheelDelta);
+>>>>>>> a61f6a68f091d03051f92778d1236a3b9c670ce5
       };
       window2.addEventListener("touchmove", function(e) {
         e.preventDefault();
